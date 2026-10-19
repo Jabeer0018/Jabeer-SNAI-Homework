@@ -1,0 +1,24 @@
+Question Title: Advanced File Management
+
+Question Link: https://my.newtonschool.co/playground/code/4ks5o139cfoh?lecture_hash=v210chxjexei
+
+Solution:
+mkdir project-files
+cd project-files
+touch report.docx summary.docx draft.docx
+cp report.docx report_backup.docx
+mkdir old
+mv draft.docx old
+mv summary.docx final_summary.docx
+cp final_summary.docx old
+rm report_backup.docx
+
+Approach:
+1. Created a folder called project-files.
+2. Created three empty files: report.docx, summary.docx, draft.docx.
+3. Copied report.docx to report_backup.docx to make a backup.
+4. Created a folder called oldx.
+5. Moved draft.docx into old.
+6. Renamed summary.docx to final_summary.docx using mv.
+7. Copied final_summary.docx into old.
+8. Deleted report_backup.docx since it was no longer needed.
