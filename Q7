@@ -1,0 +1,16 @@
+Question Title: The Missing Project Credentials
+
+Question Link: https://my.newtonschool.co/playground/code/7x83ezx6nimm
+
+Solution:
+cd EventApp
+ls -aR
+grep -r "DB_PASSWORD" .
+grep -h "^DB_PASSWORD=" $(find . -type f -name ".*") > db_password.txt
+cat db_password.txt
+
+Approach:
+1. Went into EventApp and listed everything with ls -aR, because the credentials file is hidden and plain ls would not show it.
+2. Used grep -r to search every file for DB_PASSWORD and found which hidden file contains it.
+3. Extracted the full DB_PASSWORD line from that file with grep and redirected it into a new file, db_password.txt, so the password is read dynamically and not typed by hand.
+4. Checked the result with cat. No existing files were changed.
