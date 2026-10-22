@@ -1,0 +1,25 @@
+Question Title: Create a Project Folder Structure
+
+Question Link: https://my.newtonschool.co/playground/code/jipp2htnvrww?lecture_hash=v210chxjexei
+
+Solution:
+cat > create-service << 'EOF'
+#!/bin/bash
+
+mkdir -p service/controllers
+mkdir -p service/models
+mkdir -p service/routes
+mkdir -p service/middleware
+echo "API Service" > service/README.md
+echo 'console.log("Server started");' > service/server.js
+EOF
+
+chmod +x create-service
+./create-service
+
+Approach:
+1. Found the problems: some directory names were wrong, the middleware directory and some files were missing, and the script wasn't executable.
+2. Rewrote the script with mkdir -p for controllers, models, routes and middleware so the names match the expected structure exactly.
+3. Created README.md with the text API Service and server.js with console.log("Server started"); inside the service directory, using single quotes so the inner double quotes are kept.
+4. Made the script executable with chmod +x.
+5. Ran ./create-service and verified the structure with ls -R and the file contents with cat.
