@@ -1,0 +1,20 @@
+Question Title: API-Service Directory Workflow
+
+Question Link: https://my.newtonschool.co/playground/code/5ypni48t3pzs
+
+Solution:
+cd api-service
+git init
+git add README.md
+git commit -m "Add documentation"
+git add server.js routes.js package.json
+git commit -m "Add server files"
+git status
+git log
+
+Approach:
+1. Moved into the api-service directory and initialized a Git repository with git init.
+2. Staged only README.md and committed it with the message "Add documentation".
+3. Staged server.js, routes.js and package.json by name and committed them with the message "Add server files".
+4. Did not use git add . so draft.md and .env were never staged.
+5. Ran git status to confirm draft.md and .env are still untracked, and git log to confirm both commits.
