@@ -1,0 +1,17 @@
+Question Title: Deployment Project Permissions
+
+Question Link: https://my.newtonschool.co/playground/code/3wz3wv7c89fo?lecture_hash=vifkrugjcwth
+
+Solution:
+chmod 700 deployment/app/*.py
+chmod 770 deployment/datasets deployment/datasets/*
+chmod 644 deployment/docs/OVERVIEW.md
+chmod 755 deployment/bin/*.sh
+
+Approach:
+1. Used the numeric form of chmod, where read = 4, write = 2 and execute = 1, and each digit stands for owner, group and others in that order.
+2. For the Python files I wanted only the owner to have full access, so I used 700.
+3. For datasets/ I gave owner and group full access and others none, so 770. I applied it to the directory and to the files inside it.
+4. For OVERVIEW.md the owner reads and writes while group and others only read, so 644.
+5. For the shell scripts everyone needs to run them but only the owner should edit them, so 755.
+6. I ran the commands from outside deployment/, so every path starts with deployment/.
